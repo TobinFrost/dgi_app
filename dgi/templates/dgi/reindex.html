@@ -1,0 +1,31 @@
+{% extends "front_log/re_default_page.html" %}
+{% block motduchef %}
+
+    <div class="single_post_content_left">
+              <ul class="business_catgnav  wow fadeInDown">
+                <li>
+                  <figure class="bsbig_fig"> <a href="{% url "profil_agent" chef.slug %}" class="featured_img"> <img alt="" src="{{ photo_chef.url }}"> <span class="overlay"></span> </a>
+                    <figcaption> <a href="{% url "profil_agent" chef.slug %}">{{ sign.last_name }} {{ sign.first_name }}</a> </figcaption>
+
+                  </figure>
+                </li>
+              </ul>
+    </div>
+     <div class="single_post_content_right">
+
+                        <blockquote>
+                            {{ mot }}
+                            <footer>
+                            {{ sign.last_name }} {{ sign.first_name }}
+                            </footer>
+                        </blockquote>
+
+
+
+
+     </div>
+
+{% endblock %}
+{% block mission %}
+<p>{{ miss|linebreaksbr }}</p>
+{% endblock %}

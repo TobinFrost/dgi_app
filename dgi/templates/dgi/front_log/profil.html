@@ -1,0 +1,85 @@
+{% extends "front_log/re_default_page.html" %}
+{% load static %}
+{% block carousel %}
+{% endblock %}
+{% block left_content%}
+
+
+
+
+             <div class="tabbable"> <!-- Only required for left/right tabs -->
+                  <ul class="nav nav-tabs">
+                    <li class="active"><a href="#tab1" data-toggle="tab">Présentation</a></li>
+                    <li><a href="#tab2" data-toggle="tab">Parcours Académique</a></li>
+                    <li><a href="#tab3" data-toggle="tab">Parcours Professionnel</a></li>
+                    <li><a href="#tab4" data-toggle="tab">Enseignements</a></li>
+                    <li><a href="#tab5" data-toggle="tab">Recherches</a></li>
+                    <li><a href="#tab6" data-toggle="tab">Publications</a></li>
+                    <li><a href="#tab7" data-toggle="tab">Mon CV</a></li>
+                    <li><a href="#tab8" data-toggle="tab">Encadrements</a></li>
+                  </ul>
+                  <div class="tab-content">
+                    <div class="tab-pane active" id="tab1">
+                      <div class="well">
+                             <div class="row">
+                                <div class="col-md-4 col-sm-6"><img src="{{ agent.photo.url }}" width="200" height="200"></div>
+                                <div class="col-md-8 col-sm-6">
+                                    <h3 class="text-left">{{ agent.compte.first_name }} {{ agent.compte.last_name }}</h3>
+
+                                    <p><span class="text-uppercase text-primary"><span class="glyphicon glyphicon-star"></span> Fonction : </span> {{ agent.profession }}
+                                    </p>
+                                    <p><span class="text-uppercase text-primary"><span class="glyphicon glyphicon-briefcase"></span> Specialite :</span> {{ agent.profession.specialite }}
+                                    </p>
+                                    <p><span class="text-uppercase text-primary"><span class="glyphicon glyphicon-info-sign"></span> Equipe/Laboratoire :</span>
+                                    </p>
+                                    <p><span class="text-uppercase text-primary"><span class="glyphicon glyphicon-envelope"></span> Mail :</span> {{ agent.compte.email }}
+                                    </p>
+                                    <p><span class="text-uppercase text-primary"><span class="glyphicon glyphicon-earphone"></span> Telephone :</span> {{ agent.telephone }}
+                                    </p>
+                                </div>
+                            </div>
+                      </div>
+                    </div>
+                    <div class="tab-pane" id="tab2">
+                      <div class="well">
+                            {{ agent.parcours_aca|safe }}
+                      </div>
+                    </div>
+                      <div class="tab-pane" id="tab3">
+                      <div class="well">
+                            {{ agent.parcours_pro|safe }}
+                      </div>
+                    </div>
+                      <div class="tab-pane" id="tab4">
+                      <div class="well">
+                            {{ agent.enseignements|safe }}
+                      </div>
+                    </div>
+                      <div class="tab-pane" id="tab5">
+                      <div class="well" style="overflow-x:auto;">
+                            {{ agent.recherches|safe }}
+                      </div>
+                    </div>
+                      <div class="tab-pane" id="tab6">
+                      <div class="well">
+                          {{ agent.cv|safe }}
+
+                      </div>
+                    </div>
+                      <div class="tab-pane" id="tab7">
+                      <div class="well">
+{#                          <div class="rende">#}
+                            {{ agent.curriculum|safe }}
+{#                          </div>#}
+
+                      </div>
+                    </div>
+                      <div class="tab-pane" id="tab8">
+                      <div class="well">
+                            {{ agent.encadrements|safe }}
+                      </div>
+                    </div>
+                  </div>
+             </div>
+
+{% endblock %}

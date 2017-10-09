@@ -1,0 +1,43 @@
+{% extends "front_log/default_page.html" %}
+{% load static %}
+{% block motduchef %}
+{% endblock %}
+
+{% block  carousel%}
+
+{% endblock %}
+
+{% block jssor_script %}
+
+{% endblock %}
+
+{% block filtre %}
+
+{% endblock %}
+
+{% block title %}
+    Actualité
+{% endblock %}
+{% block mission %}
+
+{% endblock %}
+{% block content %}
+    <hr>
+
+                <h2>
+                    <a href="#">{{ info.titre }}</a>
+                </h2>
+
+                <hr>
+                <img class="img-responsive" src="{{ info.image.url}}" alt="">
+                <hr>
+
+                <p><span class="glyphicon glyphicon-calendar"></span> posté le  {{ info.date }} |
+                    <span class="glyphicon glyphicon-eye-open"></span> {{ info.vue }} vue{{ info.vues|pluralize }}  |
+
+                <p>{{ info.contenu}}</p>
+
+
+
+
+{% endblock %}

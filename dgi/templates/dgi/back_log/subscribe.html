@@ -1,0 +1,28 @@
+{% extends "back_log/login.html" %}
+{% load bootstrap %}
+{% comment %}
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Inscription</title>
+</head>
+<body>
+{% endcomment %}
+{% block content %}
+    {% if is_ok %}
+    <p>Ce contact a bien été enregistré.</p>
+     {% else %}
+        <p>Ce contact n'a bien été bien enregistré.</p>
+{% endif %}
+<form METHOD="post" action="">
+ {% csrf_token %}
+    {{userform|bootstrap}}
+    {{agentprofileform|bootstrap}}
+    <input class="btn btn-primary" type="submit">
+</form>
+{% endblock %}
+{% comment %}
+</body>
+</html>{% endcomment %}

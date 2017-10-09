@@ -1,0 +1,45 @@
+{% extends "front_log/default_page.html" %}
+{% load static %}
+{% block motduchef %}
+{% endblock %}
+
+{% block  carousel%}
+
+{% endblock %}
+
+{% block title %}
+    Actualite
+{% endblock %}
+{% block content %}
+    <hr>
+
+                <h2>
+                    <a href="#">{{ publi.titre }}</a>
+                </h2>
+                <p class="lead">
+                    par {% for a in publi.auteurs.all %}
+                    {% if a.compte.is_staff %}
+                    <a href="{% url "index" %}">{{ a.compte.username }}</a>
+                        {% else %}
+                        <a href="{% url "profil_agent" a.slug %}">{{ a.compte.first_name }} {{ a.compte.last_name }}</a>
+                    {% endif %}
+                    {% endfor %}
+                </p>
+                <hr>
+                <img class="img-responsive" src="{% static "img/dgi.png" %}" alt="">
+                <hr>
+
+                <p><span class="glyphicon glyphicon-calendar"></span> posté le  {{ publi.date_post }} |
+                    <span class="glyphicon glyphicon-eye-open"></span> {{ publi.vues }} vue{{ publi.vues|pluralize }}  |
+                    <span class="glyphicon glyphicon-star"></span> Catégorie :
+                    {% for categorie in publi.categorie.all %}
+                     <a href="{% url "publication_by_categorie" categorie.id %}">{{ categorie.libelle }}</a>
+                        {% endfor %}
+                </p>
+
+                <p>{{ publi.contenu}}</p>
+
+
+
+
+{% endblock %}

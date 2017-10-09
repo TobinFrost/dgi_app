@@ -1,0 +1,23 @@
+{% extends "back_log/login.html" %}
+{% load bootstrap %}
+{% comment %}
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Inscription</title>
+</head>
+<body>
+{% endcomment %}
+{% block content %}
+<form METHOD="post" action="">
+ {% csrf_token %}
+    {{userform|bootstrap}}
+    {{userprofileform|bootstrap}}
+    <input class="btn btn-primary" type="submit">
+</form>
+{% endblock %}
+{% comment %}
+</body>
+</html>{% endcomment %}

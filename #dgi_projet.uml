@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DjangoModelDependency</ID>
+  <OriginalElement>#dgi_projet</OriginalElement>
+  <nodes>
+    <node x="417.0" y="237.0">dgi.models.DGIUser</node>
+    <node x="729.3235294117646" y="158.0">dgi.models.Serie</node>
+    <node x="227.0" y="469.0">dgi.models.ServiceEDGI</node>
+    <node x="0.0" y="469.0">dgi.models.TypeInformation</node>
+    <node x="143.8235294117647" y="237.0">dgi.models.Profession</node>
+    <node x="546.3235294117646" y="158.0">dgi.models.Departement</node>
+    <node x="483.5" y="316.0">dgi.models.Candidat</node>
+    <node x="329.32352941176464" y="0.0">django.contrib.contenttypes.models.ContentType</node>
+    <node x="146.3235294117647" y="158.0">dgi.models.Specialite</node>
+    <node x="310.3235294117647" y="158.0">django.contrib.auth.models.Group</node>
+    <node x="174.0" y="395.0">dgi.models.Configuration</node>
+    <node x="642.0" y="237.0">dgi.models.Formation</node>
+    <node x="690.25" y="316.0">dgi.models.Classe</node>
+    <node x="186.8235294117647" y="316.0">dgi.models.Agent</node>
+    <node x="356.8235294117647" y="79.0">django.contrib.auth.models.Permission</node>
+    <node x="824.25" y="395.0">dgi.models.Publication</node>
+    <node x="837.25" y="316.0">dgi.models.CategoriePublication</node>
+    <node x="12.5" y="548.0">dgi.models.Information</node>
+    <node x="0.0" y="395.0">dgi.models.Laboratoire</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="dgi.models.Candidat" target="dgi.models.DGIUser">
+      <point x="-35.5" y="-14.5" />
+      <point x="34.0" y="14.5" />
+    </edge>
+    <edge source="dgi.models.Agent" target="dgi.models.DGIUser">
+      <point x="31.5" y="-14.5" />
+      <point x="281.3235294117647" y="291.0" />
+      <point x="451.0" y="291.0" />
+      <point x="-34.0" y="14.5" />
+    </edge>
+    <edge source="dgi.models.DGIUser" target="django.contrib.auth.models.Permission">
+      <point x="34.0" y="-14.5" />
+      <point x="519.0" y="212.0" />
+      <point x="535.8235294117646" y="212.0" />
+      <point x="59.99999999999994" y="14.5" />
+    </edge>
+    <edge source="dgi.models.Formation" target="dgi.models.Departement">
+      <point x="-37.25" y="-14.5" />
+      <point x="679.25" y="212.0" />
+      <point x="627.8235294117646" y="212.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="dgi.models.Laboratoire" target="dgi.models.Agent">
+      <point x="0.0" y="-14.5" />
+      <point x="77.0" y="370.0" />
+      <point x="207.8235294117647" y="370.0" />
+      <point x="-42.0" y="14.5" />
+    </edge>
+    <edge source="dgi.models.Agent" target="dgi.models.Profession">
+      <point x="-31.5" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="django.contrib.auth.models.Permission" target="django.contrib.contenttypes.models.ContentType">
+      <point x="-5.6843418860808015E-14" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="dgi.models.Formation" target="dgi.models.Serie">
+      <point x="37.25" y="-14.5" />
+      <point x="753.75" y="212.0" />
+      <point x="788.8235294117646" y="212.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="dgi.models.Candidat" target="dgi.models.Formation">
+      <point x="35.5" y="-14.5" />
+      <point x="590.0" y="291.0" />
+      <point x="679.25" y="291.0" />
+      <point x="-37.25" y="14.5" />
+    </edge>
+    <edge source="dgi.models.Classe" target="dgi.models.Formation">
+      <point x="0.0" y="-14.5" />
+      <point x="37.25" y="14.5" />
+    </edge>
+    <edge source="dgi.models.Information" target="dgi.models.TypeInformation">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="dgi.models.Configuration" target="dgi.models.Agent">
+      <point x="0.0" y="-14.5" />
+      <point x="258.0" y="370.0" />
+      <point x="249.8235294117647" y="370.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="django.contrib.auth.models.Group" target="django.contrib.auth.models.Permission">
+      <point x="-5.6843418860808015E-14" y="-14.5" />
+      <point x="-60.0" y="14.5" />
+    </edge>
+    <edge source="dgi.models.DGIUser" target="django.contrib.auth.models.Group">
+      <point x="-34.0" y="-14.5" />
+      <point x="451.0" y="212.0" />
+      <point x="417.8235294117647" y="212.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="dgi.models.Publication" target="dgi.models.Agent">
+      <point x="-38.5" y="-14.5" />
+      <point x="862.75" y="370.0" />
+      <point x="291.8235294117647" y="370.0" />
+      <point x="42.0" y="14.5" />
+    </edge>
+    <edge source="dgi.models.Profession" target="dgi.models.Specialite">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="dgi.models.Publication" target="dgi.models.CategoriePublication">
+      <point x="38.5" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.3896147403685095" x="630.7139585342334" y="187.65380906460942" />
+  <SelectedNodes />
+  <Categories />
+</Diagram>
+

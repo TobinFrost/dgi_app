@@ -1,0 +1,13 @@
+{% extends "back_log/login.html" %}
+{% block title %}
+    Connexion
+{% endblock %}
+{% load bootstrap %}
+{% block content %}
+<form METHOD="post" action="">
+    <h2 align="center" class="form-signin-heading">DGI</h2>
+    {% csrf_token %}
+    {{form|bootstrap}}
+    <input class="btn btn-primary" value="Se Connecter" type="submit">
+</form>
+{% endblock %}

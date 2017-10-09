@@ -1,0 +1,26 @@
+{% extends "front_log/re_default_page.html" %}
+{% load static %}
+{% block motduchef %}
+{% endblock %}
+{% block title %}
+    Formations
+{% endblock %}
+{% block carousel %}
+{% endblock %}
+{% block left_content %}
+    <h1>Formations</h1>
+    <hr>
+    {% for pub in formations %}
+
+                <h4>  <a href="#">{{ pub.libelle }} ({{ pub.code }})</a></h4>
+
+                <hr>
+
+    {% endfor %}
+
+
+{% endblock %}
+
+{% block jssor_script %}
+
+{% endblock %}

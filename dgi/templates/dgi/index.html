@@ -1,0 +1,56 @@
+{% extends "front_log/default_page.html" %}
+{% load static %}
+{% block title %}
+    Acceuil
+{% endblock %}
+
+
+
+{% block motduchef %}
+     <div class="well">
+                    <h4>Le Mot du Chef De Département </h4>
+                        <blockquote>
+                            {{ mot }}
+                            <footer>
+                            {{ sign.last_name }} {{ sign.first_name }}
+                            </footer>
+                        </blockquote>
+                </div>
+{% endblock %}
+
+{% block mission %}
+    <hr>
+                    <h1>Présentation</h1>
+                <hr>
+
+
+                <h3>
+                    La Mission du département est de :
+                </h3>
+    {{ miss|linebreaksbr }}
+{% endblock %}
+
+{% block filtre %}
+
+{% endblock %}
+
+{% block content %}
+{% for actu in informations %}
+                <h2>
+                    <a href="#">{{ actu.titre }}</a>
+                </h2>
+
+                <p><span class="glyphicon glyphicon-calendar"></span> posté le  {{ actu.date }} |
+                    <span class="glyphicon glyphicon-eye-open"></span> {{ actu.vue }} vue{{ actu.vues|pluralize }}  |
+
+
+                </p>
+                <hr>
+                <img class="img-responsive" src="{{ actu.image.url}}" alt="">
+                <hr>
+                <p>{{ actu.contenu|truncatewords:20 }}</p>
+                <a class="btn btn-primary" href="{% url "detail_information" actu.slug  %}">En savoir plus <span class="glyphicon glyphicon-chevron-right"></span></a>
+
+                <hr>
+    {% endfor %}
+{% endblock %}

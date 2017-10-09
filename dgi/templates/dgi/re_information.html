@@ -1,0 +1,27 @@
+{% extends "front_log/re_default_page.html" %}
+{% block title %}
+    Information
+{% endblock %}
+{% block carousel %}
+
+{% endblock %}
+{% block left_content %}
+    <div class="single_page">
+        <h1>{{ info.titre }}</h1>
+        <div class="post_commentbox">
+            <span ><i class="fa fa-calendar"></i>
+                {{ info.date }}
+            </span>
+            <span ><i class="fa fa-eye"></i>
+                {{ info.vue }} vue{{ info.vues|pluralize }}
+            </span>
+        </div>
+        <div class="single_page_content" >
+            <img class="img-center" src="{{ info.image.url}}">
+            <p>{{ info.contenu}}</p>
+        </div>
+            {% if info.fichier.url is not null %}
+            <a href="{{ info.fichier.url }}">Télécharger</a>
+        {% endif %}
+    </div>
+{% endblock %}

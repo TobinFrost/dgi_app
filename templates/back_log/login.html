@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:h="http://www.w3.org/1999/html" xmlns:p="http://www.w3.org/1999/html">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DGI - {% block title %}Login  {% endblock %}</title>
+     <link rel="stylesheet" href="{% static "bootstrap/css/bootstrap.css" %}" />
+     <link rel="stylesheet" href="{% static "css/dashboard.css" %}"/>
+
+    <link rel="stylesheet" href="{% static "css/font-awesome.css" %}">
+    <script src="{% static "js/jQuery/jquery-1.11.0.min.js" %}" ></script>
+    <script src="{% static "bootstrap/js/bootstrap.js" %}"></script>
+
+</head>
+<body>
+<div class="container" style="background-color: #F7F7F7;max-width: 350px;padding: 40px 40px;margin: 0 auto 25px;border-radius: 2px">
+{% block content %}
+      <form class="form-signin">
+      	<img src="{% static "img/my_logo.png" %}"  style="height: 120px;width: 180px;margin: 0 auto ;vertical-align: middle;display: block;" />
+        <h2 align="center" class="form-signin-heading">DGI</h2>
+        <label for="inputEmail" class="sr-only">Identifiant</label>
+        	<input type="text" id="inputEmail" class="form-control" placeholder="Email address" required="true" autofocus="true"/>
+        	<label for="inputPassword" class="sr-only">Mot de Passe</label>
+        	<input type="password"  id="inputPassword" placeholder="Password" class="form-control"/>
+        	<div class="checkbox">
+	          <label>
+	            <input type="checkbox" value="remember-me"/> Se rappeler de moi
+	          </label>
+        	</div>
+        <button class="btn btn-lg btn-primary btn-block"  value="Se connecter" type="submit"></button>
+
+
+
+      </form>
+{% endblock %}
+    </div>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+{% extends "front_log/re_default_page.html" %}
+{% load static %}
+{% block motduchef %}
+{% endblock %}
+{% block title %}
+    Publications
+{% endblock %}
+{% block carousel %}
+{% endblock %}
+{% block left_content %}
+    <h1>Publications</h1>
+    <hr>
+    {% for pub in pubs %}
+
+                <h4>  <a href="#">{{ pub.titre }}</a></h4>
+                <p>
+                {% for a in pub.auteurs.all %}
+                    {% if a.compte.is_staff %}
+                    <a href="{% url "index" %}">{{ a.compte.username }}</a>
+                        {% else %}
+                        <a href="{% url "profil_agent" a.slug %}">{{ a.compte.first_name }} {{ a.compte.last_name }}</a>,
+                    {% endif %}
+                {% endfor %}
+                </p>
+                <p>Année : {{ pub.annee }}, Pages : {{ pub.pages }}</p>
+                <p> <a href="{{ pub.reference }}">{{ pub.libelle_reference }}</a>,
+                    {{ pub.detail_reference }} </p>
+
+                <hr>
+
+    {% endfor %}
+
+
+{% endblock %}
+
+{% block jssor_script %}
+
+{% endblock %}
